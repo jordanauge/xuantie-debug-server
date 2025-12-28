@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "XuanTie Remote Debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/your_firmware.elf",
+            "miDebuggerPath": "/usr/bin/gdb-multiarch",
+            "miDebuggerServerAddress": "localhost:1234",
+            "linux": {
+                "MIMode": "gdb"
+            },
+            "setupCommands": [
+                { "text": "set architecture riscv:rv32" },
+                { "text": "set mem inaccessible-by-default off" },
+                { "text": "source ${workspaceFolder}/.gdbinit" }
+            ],
+            "externalConsole": false,
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
